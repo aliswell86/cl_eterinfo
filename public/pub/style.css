@@ -1,0 +1,672 @@
+@import './open-color.css';
+
+:root {
+  --padding-px-1:1px;
+  --padding-px-2:2px;
+  --padding-px-4:4px;
+  --padding-px-10:10px;
+
+  --oc-red-10 : #990000;
+  --oc-red-11 : #800000;
+  --oc-red-12 : #660000;
+
+  --btn-transition-duration: 0.14s;
+  --btn-border-1: 1px solid var(--oc-gray-5);
+  --btn-border-2: 1px solid var(--oc-gray-9);
+  --btn-border-radius-1: 4em;
+
+  --item-ctrl-batang : rgb(0, 36, 74);
+  --item-ctrl-title : rgb(255, 255, 255);
+  --item-ctrl-subtxt : rgb(220, 220, 220);
+  --item-ctrl-hands : rgb(0, 203, 198);
+  --item-ctrl-dmg : rgb(255, 97, 57);
+  --item-ctrl-cri : rgb(255, 203, 0);
+  --item-ctrl-point : rgb(231, 109, 0);
+  --item-ctrl-spd : rgb(198, 121, 198);
+  --item-ctrl-weight : rgb(148, 150, 0);
+  --item-ctrl-count : rgb(0, 203, 231);
+  --item-ctrl-tanchang : rgb(57, 243, 82);
+  --item-ctrl-grade0 : rgb(57, 243, 82);
+  --item-ctrl-grade1 : rgb(57, 243, 82);
+  --item-ctrl-grade2 : rgb(57, 243, 82);
+  --item-ctrl-grade3 : rgb(198, 0, 148);
+  --item-ctrl-grade4 : rgb(57, 243, 82);
+  --item-ctrl-grade5 : rgb(57, 243, 82);
+  --item-ctrl-grade6 : rgb(57, 243, 82);
+}
+input[type="checkbox"], input[type="radio"] {
+  display: none;
+}
+
+body, h1, h2 {
+  margin: 0px;
+  padding: 0px;
+  background-color: var(--oc-gray-0);
+  /* background:darkgray; */
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  font-family: 'Noto Serif KR', serif;
+  font-family: 'Open Sans', sans-serif;
+  height:120%;
+  padding: 0px 4px 0px 4px;
+}
+
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: var(--oc-gray-0);
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0px 25px 0px;
+  color: var(--oc-gray-9);
+  font-weight: 400;
+  font-family: Do Hyeon;
+}
+
+h2 {
+  margin: 20px 0px 10px 0px;  
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Do Hyeon;
+}
+
+h2:hover {
+  color: var(--oc-gray-8);
+}
+
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.logo {
+  display: flex;
+  align-items:center;
+  padding: var(--padding-px-4);
+}
+
+.logo i {
+  color:var(--oc-gray-9);
+  font-size:24px;
+  padding:var(--padding-px-4);
+}
+
+.logo .title {
+  color:var(--oc-gray-9);
+  font-family: 'Do Hyeon';
+  font-weight: bolder;
+  /* display:flex;
+  flex-direction: column;
+  align-items:flex-start; */
+  margin-left: 10px;
+  font-size:32px;
+}
+
+.logo .title .sub-title {
+  /* color:var(--oc-red-12); */
+  color: black;
+  font-size:12px;
+  font-family: 'Yeon Sung';
+  margin-top:-6px;
+}
+
+.menu {
+  padding: var(--padding-px-4);
+  padding-right: 10px;
+  font-size:24px;
+  color:var(--oc-gray-8);
+}
+
+.bottom-menu {
+  font-size: 9px;
+  /* font-weight: 600; */
+  /* background-color: var(--oc-gray-8); */
+  background-color:var(--oc-red-11);
+  padding: var(--padding-px-10);
+}
+
+.bottom-menu a {
+  color: var(--oc-gray-0);
+}
+
+.bottom-menu ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+.bottom-menu ul li a:hover {
+  border-bottom: 2px solid white;
+  padding-bottom: var(--padding-px-2);
+}
+
+.gradient {
+  height: 6px;
+  background: linear-gradient(to bottom, var(--oc-red-11), var(--oc-gray-0));
+}
+
+.gradient1 {
+  height: 6px;
+  background: linear-gradient(to bottom, var(--oc-gray-9), var(--oc-gray-0));
+}
+
+.itemkind ul {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.itemkind ul li span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:50px;
+  height:50px;
+  border: var(--btn-border-1);
+  text-align: center;
+  /* line-height: 25px; */
+  font-size:20px;
+  padding:4px;
+  margin:1px;
+  background-color: white;
+  /* 대상 속성 */
+  transition-property: border,margin,padding,color,font;
+  /*변형 완료 1초*/
+  transition-duration: var(--btn-transition-duration);
+  /*빠른 시작 서서히 감속*/
+  transition-timing-function: ease-in;
+}
+
+.itemkind ul li span:hover, input[type="radio"]:checked ~ label span {
+  border: 1.4px solid var(--oc-red-10);
+  margin:0.6px;
+  cursor: pointer;
+  color: var(--oc-red-10);
+  font-weight: 600;
+}
+
+.itemkind ul li label span div {
+  font-size:8px;
+  padding-top:4px;
+}
+
+.filter-view ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.filter-view ul li {
+  margin-bottom:14px;
+}
+
+.filter-view ul li label span {
+  /* border: var(--btn-border-1); */
+  border-radius: var(--btn-border-radius-1);
+  padding:8px 14px 8px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-right: 4px;
+  cursor: pointer;
+  background-color: var(--oc-gray-4);
+
+  transition-property: border,background,font;
+  transition-duration: var(--btn-transition-duration);
+  transition-timing-function: ease-in;
+}
+
+.filter-view ul li label span:hover {
+  background-color: var(--oc-gray-5);
+}
+
+.filter-view ul li input[type="checkbox"]:checked ~ label span {
+  background-color: var(--oc-red-10);
+  color: var(--oc-gray-0);
+}
+
+.result-count {
+  font-size:10px;
+  text-align: right;
+}
+
+.filter-desc {
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+
+.item-list {
+  display: flex;
+  /* justify-content: space-evenly; */
+  flex-wrap: wrap;
+}
+
+.item-list li {
+  border: var(--btn-border-1); 
+  padding: 2px 8px 2px 8px;
+  background-color: white;
+  border-radius: 0.25em;
+  margin:0px 2px 2px 0px;
+  color: var(--oc-gray-9);
+  cursor: pointer;
+
+  transition-property: border,background;
+  transition-duration: var(--btn-transition-duration);
+  transition-timing-function: ease-in;
+
+  display: flex;
+  align-items: center;
+}
+
+.item-list li:hover {
+  background-color: var(--oc-red-4);
+  border: 1px solid var(--oc-red-8);
+  /* padding: 1.6px 7.6px 1.7px 7.6px; */
+}
+
+.item-list li img {
+  margin-right: 6px;
+  width: 50px;
+  height: 50px;
+}
+
+.item-list li .option .option-title {
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.item-list li .option .option-dmg {
+  color: var(--oc-red-9);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.item-list li .option .option-sm {
+  font-size:10px;
+}
+
+header div.image-main {
+  /* width: 100%; */
+  height: 180px;
+  /* border: 1px solid var(--oc-gray-7); */
+  background: url('http://e3.mgame.com/images/openbeta/ucc/top_middle_bg.jpg') no-repeat;
+  background-color: var(--oc-gray-9);
+  background-position: 10% 60%;
+}
+
+@media (min-width: 1024px) {
+  header div.image-main {
+    background-size: 100%;
+  }
+}
+
+header div.image-main .image-main-overay {
+  width: 100%;
+  height: 180px;
+  text-align: center;
+  background-color: rgb(201, 42, 42, 0.1);
+}
+
+header div.image-main .image-main-overay .main-search {
+  margin-top: 80px;
+  width: 80%;
+  max-width: 600px;
+  height: 25px;
+}
+.pupular-item h2 {
+  margin-right: 4px;
+  /* background-color: var(--oc-yellow-2);
+  border: 1px solid var(--oc-yellow-4);
+  padding: 6px; */
+  width: 170px;
+}
+
+.pupular-item h2 i {  
+  color: var(--oc-gray-9);
+  cursor: pointer;
+}
+
+.pupular-item .pupular-item-contents {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.pupular-item .pupular-item-contents .gubun {
+  width: 200px;
+  margin: 0px 10px 10px 0px;
+}
+
+.pupular-item .pupular-item-contents .gubun .title {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Do Hyeon;
+}
+
+
+.pupular-item .pupular-item-contents .gubun .detail-list {
+  font-size: 14px;
+}
+
+.pupular-item .pupular-item-contents .gubun .detail-list ul li img {
+  width: 30px;
+  height: 30px;
+}
+
+.voss-timer h2 {
+  margin-right: 4px;
+  /* background-color: var(--oc-green-2);
+  border: 1px solid var(--oc-green-4); */
+  /* padding: 6px; */
+  width: 170px;
+}
+
+.voss-timer .voss-timer-contents ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.voss-timer .voss-timer-contents ul li {
+  width:200px;
+  margin: 0px 10px 10px 0px;
+}
+
+.voss-timer .voss-timer-contents ul li .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--oc-gray-4);
+  border-bottom: 0px;
+}
+
+.voss-timer .voss-timer-contents ul li .top:before {
+  content: "";
+  background: url('http://file1.mgame.com/guild/new_guild/notice/19d2bd471e5b3ed76529b6c99ad4caa1.gif') no-repeat;
+  background-position: 50% 30%;
+  opacity: 0.4;
+  position: absolute;
+  width:198px;
+  height:80px;
+  z-index: -1;
+}
+
+.voss-timer .voss-timer-contents ul li .top .voss-info {
+  padding-left: 10px;
+  font-weight: 900;
+  color: black;
+}
+
+.voss-timer .voss-timer-contents ul li .top .voss-info .voss-place {
+  font-size: 16px;
+}
+
+.voss-timer .voss-timer-contents ul li .top .voss-info .voss-time {
+  font-size: 12px;
+  /* color: ; */
+}
+
+.voss-timer .voss-timer-contents ul li .top .voss-img {
+  width: 80px;
+  height: 80px;
+}
+
+.voss-timer .voss-timer-contents ul li .top .voss-img img {
+  width: 80px;
+  height: 80px;
+}
+
+.voss-timer .voss-timer-contents ul li .voss-energy {
+  font-size: 10px;
+  color: var(--oc-red-8);
+  padding: 1px;  
+  background-color: var(--oc-red-2);
+  text-align: center;
+}
+
+.voss-timer .voss-timer-contents ul li .voss-name {
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+  padding: 2px;
+  border: 1px solid var(--oc-gray-4);
+  border-top: 0px;
+  /* background-color: var(--oc-violet-3); */
+}
+
+.item-detail {
+  margin-left: 4px;
+}
+
+.item-detail-overflow {
+  overflow-y: scroll;
+}
+
+.item-detail .item-detail-list {
+  display: flex;    
+}
+
+.item-detail .item-ctrl {
+  margin: 8px 10px 8px 2px;
+  width: 250px;
+  text-shadow: -1.0px 0 #000, 0 1.0px #000, 1.0px 0 #000, 0 -1.0px #000;
+  
+  background-color: var(--item-ctrl-batang);
+  border: 3px solid var(--oc-gray-2);
+  outline: 3px solid var(--item-ctrl-batang);
+
+  box-sizing: border-box;
+}
+
+.item-detail .item-ctrl:before {
+  /* content: "";
+  background-color: var(--item-ctrl-batang);
+  opacity: 0.95;
+  position: absolute;  
+  z-index: -1;
+  padding: 10px;
+  width: 262px;
+  height: 460px;
+  border: 3px solid var(--oc-gray-2);
+  outline: 3px solid var(--item-ctrl-batang); */
+}
+
+.item-detail .item-ctrl .item-ctrl-info {
+  display: flex;
+  flex-direction: column;
+
+  padding: 8px;
+  font-size: 14px;
+
+  line-height: 1.22;
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-title {
+  color: white;
+  font-weight: 600;  
+  font-size: 18px;
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-image {
+  text-align: center;
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-subtitle {
+  display: flex;
+  flex-direction: column;
+
+  color: var(--item-ctrl-subtxt);  
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-hands {
+  color: var(--item-ctrl-hands);  
+  margin-top: 10px;
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-dmg {
+  color: var(--item-ctrl-dmg);  
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-cri {
+  color: var(--item-ctrl-cri);  
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-point {
+  color: var(--item-ctrl-point);  
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-scope {
+  color: var(--item-ctrl-point);  
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-kind {
+  color: var(--item-ctrl-subtxt);  
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-spd {
+  color: var(--item-ctrl-spd);  
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-grade {
+  color: var(--item-ctrl-subtxt);  
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-size {
+  color: var(--item-ctrl-subtxt);  
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-weight {
+  color: var(--item-ctrl-weight);  
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-count {
+  color: var(--item-ctrl-count);  
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-tanchang {
+  color: var(--item-ctrl-tanchang);  
+  margin:10px 0px 10px 0px;
+}
+
+.item-detail .item-ctrl .item-ctrl-info .item-upgrade {
+  display: flex;
+  flex-direction: column;  
+
+  color: var(--item-ctrl-grade3); 
+}
+
+.item-detail .item-ctrl-append {
+  /* height: 32px; */
+  padding: 5px 10px 5px 10px;
+  /* border: 3px solid var(--oc-gray-2); */
+  /* outline: 3px solid var(--item-ctrl-batang); */
+  border-radius: 0.25em;
+  background-color: var(--item-ctrl-batang);
+  color: white;
+  /* margin-left: 10px; */
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  /* font-family: 'Do Hyeon'; */
+
+  transition-property: box-shadow,padding,font;
+  transition-duration: var(--btn-transition-duration);
+  transition-timing-function: ease-in;
+}
+
+.item-detail .item-ctrl-append:hover {  
+  box-shadow: 1px 1px 1.4px 1px #20252e;
+  /* padding: 7px 11px 7px 11px; */
+  font-size: 17px;
+}
+
+.top-botton {
+  display: flex;  
+  flex-wrap: wrap;
+
+  width: 250px;
+  margin: 0px 0px 0px 6px;
+}
+
+.filter-combo {
+  margin: 0px 6px 4px 0px
+}
+
+.filter-combo .btn-filter-combo {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 116px;
+
+  font-size: 15px;  
+  color: var(--oc-gray-0);
+  background-color: var(--oc-gray-7);
+  border: 1px solid var(--oc-gray-9);
+  padding: 4px 10px 4px 10px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition-property: font,background;
+  transition-duration: var(--btn-transition-duration);
+  transition-timing-function: ease-in;
+}
+
+.filter-combo .btn-filter-combo:hover {
+  color: var(--oc-gray-2);
+  background-color: var(--oc-gray-9);
+}
+
+.filter-combo .filter-combo-list {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 116px;
+
+  color: var(--oc-gray-0);
+  border: 1px solid var(--oc-gray-9);
+  border-top: 0px;
+  background-color: var(--oc-gray-7); 
+
+  /* text-align: center; */
+  font-size: 14px;  
+
+  /* position: absolute; */
+}
+
+.filter-combo .filter-combo-list li {
+  padding: 4px 10px 4px 10px;
+  
+  /* transition-property: font,background;
+  transition-duration: var(--btn-transition-duration);
+  transition-timing-function: ease-in; */
+}
+
+.filter-combo .filter-combo-list li:hover {
+  color: var(--oc-gray-2);
+  background-color: var(--oc-gray-9);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.filter-combo .filter-combo-list .grade3:hover {
+  color: var(--item-ctrl-grade3);  
+}
+
+.filter-combo .filter-combo-list .grade6:hover {
+  color: white; 
+}
